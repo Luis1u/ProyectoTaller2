@@ -21,6 +21,7 @@ namespace SistemaDeGestion2026
 
 
         #region Variables 
+        private bool lectorCBHabilitado = false;
 
         private aproduc producto = new aproduc();
         private xnumcor correlativo = new xnumcor();
@@ -31,6 +32,7 @@ namespace SistemaDeGestion2026
         private FilterInfoCollection CaptureDevice; // list of webcam
         private VideoCaptureDevice FinalFrame;
         private bool TieneFoto = false;
+
 
         #endregion
 
@@ -436,6 +438,42 @@ namespace SistemaDeGestion2026
         private void textBoxX1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BTNCodigoBarras_Click(object sender, EventArgs e)
+        {
+            if (!lectorCBHabilitado)
+            {
+                lectorCBHabilitado = true;
+                LBLCodigoDeBarras.Text = "LECTOR ACTIVO";
+                LBLCodigoDeBarras.BackColor = Color.PaleGreen;
+            }
+            else
+            {
+                if (LBLCodigoDeBarras.Text == "LECTOR ACTIVO")
+                {
+                    LBLCodigoDeBarras.Text = "SIN CÓDIGO";
+                    LBLCodigoDeBarras.BackColor = Color.Salmon;
+                }
+                else
+                {
+                    LBLCodigoDeBarras.BackColor = Color.LightBlue;
+                }
+                lectorCBHabilitado = false;
+                TXTModelo.Focus();
+            }
+        }
+
+        private void BTNCodigoBarras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (LBLCodigoDeBarras.Text == "LECTOR ACTIVO")
+            {
+                LBLCodigoDeBarras.Text = "" + e.KeyChar;
+            }
+            else
+            {
+                LBLCodigoDeBarras.Text += e.KeyChar;
+            }
         }
     }
 }
