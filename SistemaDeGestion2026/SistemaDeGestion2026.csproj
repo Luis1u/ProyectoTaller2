@@ -156,11 +156,11 @@
     <Compile Include="FRMProducto_Lista.Designer.cs">
       <DependentUpon>FRMProducto_Lista.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMProducto_Registar.cs">
+    <Compile Include="FRMProducto_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMProducto_Registar.Designer.cs">
-      <DependentUpon>FRMProducto_Registar.cs</DependentUpon>
+    <Compile Include="FRMProducto_Registrar.Designer.cs">
+      <DependentUpon>FRMProducto_Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMProveedor_Lista.cs">
       <SubType>Form</SubType>
@@ -237,8 +237,8 @@
     <EmbeddedResource Include="FRMProducto_Lista.resx">
       <DependentUpon>FRMProducto_Lista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMProducto_Registar.resx">
-      <DependentUpon>FRMProducto_Registar.cs</DependentUpon>
+    <EmbeddedResource Include="FRMProducto_Registrar.resx">
+      <DependentUpon>FRMProducto_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMProveedor_Lista.resx">
       <DependentUpon>FRMProveedor_Lista.cs</DependentUpon>
@@ -435,6 +435,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_codigoDeBarras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ic_codigo_barras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
