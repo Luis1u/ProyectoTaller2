@@ -237,7 +237,7 @@ namespace CapaRN
                                  "capdmarpro " +
                          "from aproduc " +
                          "where " +
-                                "capdcodbar = @capdcodbar";
+                                "capdcodbar = @capdcodbar and capdcodbar != '' ";
 
             if (modificar)
             {

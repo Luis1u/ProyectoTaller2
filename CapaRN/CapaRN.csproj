@@ -51,6 +51,7 @@
     <Compile Include="aprovee.cs" />
     <Compile Include="aususis.cs" />
     <Compile Include="lclient.cs" />
+    <Compile Include="lproduc.cs" />
     <Compile Include="lprovee.cs" />
     <Compile Include="lususis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

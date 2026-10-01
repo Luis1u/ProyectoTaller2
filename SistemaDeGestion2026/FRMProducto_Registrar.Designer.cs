@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMProducto_Registrar));
             this.GPPanelPrincipal = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.BTNCodigoDeBarras = new DevComponents.DotNetBar.ButtonX();
             this.LBLCodigoDeBarras = new DevComponents.DotNetBar.LabelX();
             this.DINPrecioMinimo = new DevComponents.Editors.DoubleInput();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
@@ -60,7 +61,6 @@
             this.TXTDescripcion = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SWBEstado = new DevComponents.DotNetBar.Controls.SwitchButton();
             this.OFDElegirImagen = new System.Windows.Forms.OpenFileDialog();
-            this.BTNCodigoDeBarras = new DevComponents.DotNetBar.ButtonX();
             this.GPPanelPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DINPrecioMinimo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DINPrecioVenta)).BeginInit();
@@ -132,6 +132,21 @@
             this.GPPanelPrincipal.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.GPPanelPrincipal.TabIndex = 1;
             this.GPPanelPrincipal.Text = "Persona";
+            this.GPPanelPrincipal.Click += new System.EventHandler(this.GPPanelPrincipal_Click);
+            // 
+            // BTNCodigoDeBarras
+            // 
+            this.BTNCodigoDeBarras.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNCodigoDeBarras.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNCodigoDeBarras.Image = global::SistemaDeGestion2026.Properties.Resources.ic_codigoDeBarras;
+            this.BTNCodigoDeBarras.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNCodigoDeBarras.Location = new System.Drawing.Point(314, 3);
+            this.BTNCodigoDeBarras.Name = "BTNCodigoDeBarras";
+            this.BTNCodigoDeBarras.Size = new System.Drawing.Size(25, 26);
+            this.BTNCodigoDeBarras.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNCodigoDeBarras.TabIndex = 34;
+            this.BTNCodigoDeBarras.Click += new System.EventHandler(this.BTNCodigoDeBarras_Click);
+            this.BTNCodigoDeBarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BTNCodigoDeBarras_KeyPress);
             // 
             // LBLCodigoDeBarras
             // 
@@ -509,6 +524,7 @@
             this.BTNGrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNGrabar.TabIndex = 11;
             this.BTNGrabar.Text = "&Grabar";
+            this.BTNGrabar.Click += new System.EventHandler(this.BTNGrabar_Click);
             // 
             // TXTModelo
             // 
@@ -574,19 +590,6 @@
             this.OFDElegirImagen.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png";
             this.OFDElegirImagen.Title = "Elegir Fotografía";
             // 
-            // BTNCodigoDeBarras
-            // 
-            this.BTNCodigoDeBarras.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNCodigoDeBarras.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNCodigoDeBarras.Image = global::SistemaDeGestion2026.Properties.Resources.ic_codigoDeBarras;
-            this.BTNCodigoDeBarras.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNCodigoDeBarras.Location = new System.Drawing.Point(314, 3);
-            this.BTNCodigoDeBarras.Name = "BTNCodigoDeBarras";
-            this.BTNCodigoDeBarras.Size = new System.Drawing.Size(25, 26);
-            this.BTNCodigoDeBarras.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNCodigoDeBarras.TabIndex = 34;
-            this.BTNCodigoDeBarras.Click += new System.EventHandler(this.BTNCodigoDeBarras_Click_1);
-            // 
             // FRMProducto_Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -597,6 +600,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRMProducto_Registrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMProducto_Registrar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRMProducto_Registrar_FormClosing);
             this.Load += new System.EventHandler(this.FRMProducto_Registrar_Load);
