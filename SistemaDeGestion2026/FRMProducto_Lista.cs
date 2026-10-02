@@ -45,6 +45,7 @@ namespace SistemaDeGestion2026
                                            );
             foreach (lproduc a in lista_productos)
             {
+                //se añade una nueva fila
                 DTGLista.Rows.Add();
                 if (a.capdestpro)
                 {
@@ -57,12 +58,13 @@ namespace SistemaDeGestion2026
                 {
                     DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Salmon;
                 }
+                //se inserta los datos por columna
                 DTGLista[0, DTGLista.Rows.Count - 1].Value = a.papdcodpro;
                 DTGLista[1, DTGLista.Rows.Count - 1].Value = a.capdestpro;
                 DTGLista[2, DTGLista.Rows.Count - 1].Value = a.capdmodpro;
                 DTGLista[3, DTGLista.Rows.Count - 1].Value = a.capdcodbar;
                 DTGLista[4, DTGLista.Rows.Count - 1].Value = a.capdnompro;
-                DTGLista[5, DTGLista.Rows.Count - 1].Value = a.fapdcodcat;
+                DTGLista[5, DTGLista.Rows.Count - 1].Value = a.cacpnomcat;
                 DTGLista[6, DTGLista.Rows.Count - 1].Value = a.capdgenpro;
                 DTGLista[7, DTGLista.Rows.Count - 1].Value = a.capdmarpro;
                 DTGLista[8, DTGLista.Rows.Count - 1].Value = a.capdcolpro;

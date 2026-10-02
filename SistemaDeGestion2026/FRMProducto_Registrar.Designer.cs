@@ -158,7 +158,7 @@
             this.LBLCodigoDeBarras.Location = new System.Drawing.Point(164, 3);
             this.LBLCodigoDeBarras.Name = "LBLCodigoDeBarras";
             this.LBLCodigoDeBarras.Size = new System.Drawing.Size(144, 26);
-            this.LBLCodigoDeBarras.TabIndex = 33;
+            this.LBLCodigoDeBarras.TabIndex = 1;
             this.LBLCodigoDeBarras.Text = "SIN CÓDIGO";
             // 
             // DINPrecioMinimo
@@ -174,7 +174,7 @@
             this.DINPrecioMinimo.Name = "DINPrecioMinimo";
             this.DINPrecioMinimo.ShowUpDown = true;
             this.DINPrecioMinimo.Size = new System.Drawing.Size(89, 23);
-            this.DINPrecioMinimo.TabIndex = 32;
+            this.DINPrecioMinimo.TabIndex = 12;
             // 
             // labelX3
             // 
@@ -202,7 +202,7 @@
             this.DINPrecioVenta.Name = "DINPrecioVenta";
             this.DINPrecioVenta.ShowUpDown = true;
             this.DINPrecioVenta.Size = new System.Drawing.Size(89, 23);
-            this.DINPrecioVenta.TabIndex = 30;
+            this.DINPrecioVenta.TabIndex = 11;
             // 
             // labelX2
             // 
@@ -256,7 +256,7 @@
             this.CMBTalla.Name = "CMBTalla";
             this.CMBTalla.Size = new System.Drawing.Size(177, 23);
             this.CMBTalla.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CMBTalla.TabIndex = 26;
+            this.CMBTalla.TabIndex = 9;
             this.CMBTalla.WatermarkText = "Talla";
             this.CMBTalla.Enter += new System.EventHandler(this.CMBNombreProducto_Enter);
             this.CMBTalla.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CMBTalla_KeyDown);
@@ -278,7 +278,7 @@
             this.CMBGenero.Name = "CMBGenero";
             this.CMBGenero.Size = new System.Drawing.Size(177, 23);
             this.CMBGenero.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CMBGenero.TabIndex = 25;
+            this.CMBGenero.TabIndex = 3;
             this.CMBGenero.WatermarkText = "Género";
             // 
             // comboItem1
@@ -304,7 +304,7 @@
             this.CMBColor.Name = "CMBColor";
             this.CMBColor.Size = new System.Drawing.Size(147, 23);
             this.CMBColor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CMBColor.TabIndex = 24;
+            this.CMBColor.TabIndex = 8;
             this.CMBColor.WatermarkText = "Color";
             this.CMBColor.Enter += new System.EventHandler(this.CMBNombreProducto_Enter);
             this.CMBColor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CMBNombreProducto_KeyDown);
@@ -321,7 +321,7 @@
             this.CMBMaterial.Name = "CMBMaterial";
             this.CMBMaterial.Size = new System.Drawing.Size(329, 23);
             this.CMBMaterial.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CMBMaterial.TabIndex = 23;
+            this.CMBMaterial.TabIndex = 7;
             this.CMBMaterial.WatermarkText = "Material ";
             this.CMBMaterial.Enter += new System.EventHandler(this.CMBNombreProducto_Enter);
             this.CMBMaterial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CMBNombreProducto_KeyDown);
@@ -338,7 +338,7 @@
             this.CMBMarca.Name = "CMBMarca";
             this.CMBMarca.Size = new System.Drawing.Size(329, 23);
             this.CMBMarca.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CMBMarca.TabIndex = 22;
+            this.CMBMarca.TabIndex = 6;
             this.CMBMarca.WatermarkText = "Marca ";
             this.CMBMarca.Enter += new System.EventHandler(this.CMBNombreProducto_Enter);
             this.CMBMarca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CMBMarca_KeyDown);
@@ -355,7 +355,7 @@
             this.CMBNombreProducto.Name = "CMBNombreProducto";
             this.CMBNombreProducto.Size = new System.Drawing.Size(329, 23);
             this.CMBNombreProducto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CMBNombreProducto.TabIndex = 21;
+            this.CMBNombreProducto.TabIndex = 5;
             this.CMBNombreProducto.WatermarkText = "Nombre del Producto";
             this.CMBNombreProducto.Enter += new System.EventHandler(this.CMBNombreProducto_Enter);
             this.CMBNombreProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CMBNombreProducto_KeyDown);
@@ -373,7 +373,7 @@
             this.CMBCategoria.Name = "CMBCategoria";
             this.CMBCategoria.Size = new System.Drawing.Size(330, 23);
             this.CMBCategoria.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CMBCategoria.TabIndex = 20;
+            this.CMBCategoria.TabIndex = 4;
             this.CMBCategoria.WatermarkText = "Categoría";
             // 
             // GPFotografia
@@ -439,11 +439,11 @@
             this.BTNAbrirFoto.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNAbrirFoto.Image = global::SistemaDeGestion2026.Properties.Resources.ic_camara_abrir;
             this.BTNAbrirFoto.ImageFixedSize = new System.Drawing.Size(30, 30);
-            this.BTNAbrirFoto.Location = new System.Drawing.Point(46, 160);
+            this.BTNAbrirFoto.Location = new System.Drawing.Point(71, 160);
             this.BTNAbrirFoto.Name = "BTNAbrirFoto";
             this.BTNAbrirFoto.Size = new System.Drawing.Size(37, 33);
             this.BTNAbrirFoto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNAbrirFoto.TabIndex = 2;
+            this.BTNAbrirFoto.TabIndex = 1;
             this.BTNAbrirFoto.Click += new System.EventHandler(this.BTNAbrirFoto_Click);
             // 
             // BTNLimpiarFoto
@@ -456,7 +456,7 @@
             this.BTNLimpiarFoto.Name = "BTNLimpiarFoto";
             this.BTNLimpiarFoto.Size = new System.Drawing.Size(37, 33);
             this.BTNLimpiarFoto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNLimpiarFoto.TabIndex = 1;
+            this.BTNLimpiarFoto.TabIndex = 2;
             this.BTNLimpiarFoto.Click += new System.EventHandler(this.BTNLimpiarFoto_Click);
             // 
             // BTNCapturarFoto
@@ -495,7 +495,7 @@
             this.BTNSalir.Name = "BTNSalir";
             this.BTNSalir.Size = new System.Drawing.Size(121, 51);
             this.BTNSalir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNSalir.TabIndex = 13;
+            this.BTNSalir.TabIndex = 15;
             this.BTNSalir.Text = "&Salir";
             this.BTNSalir.Click += new System.EventHandler(this.BTNSalir_Click);
             // 
@@ -509,7 +509,7 @@
             this.BTNLimpiar.Name = "BTNLimpiar";
             this.BTNLimpiar.Size = new System.Drawing.Size(121, 51);
             this.BTNLimpiar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNLimpiar.TabIndex = 12;
+            this.BTNLimpiar.TabIndex = 14;
             this.BTNLimpiar.Text = "&Limpiar";
             // 
             // BTNGrabar
@@ -522,7 +522,7 @@
             this.BTNGrabar.Name = "BTNGrabar";
             this.BTNGrabar.Size = new System.Drawing.Size(121, 51);
             this.BTNGrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNGrabar.TabIndex = 11;
+            this.BTNGrabar.TabIndex = 13;
             this.BTNGrabar.Text = "&Grabar";
             this.BTNGrabar.Click += new System.EventHandler(this.BTNGrabar_Click);
             // 
@@ -561,7 +561,7 @@
             this.TXTDescripcion.Name = "TXTDescripcion";
             this.TXTDescripcion.PreventEnterBeep = true;
             this.TXTDescripcion.Size = new System.Drawing.Size(332, 53);
-            this.TXTDescripcion.TabIndex = 7;
+            this.TXTDescripcion.TabIndex = 10;
             this.TXTDescripcion.WatermarkText = "Descripción";
             this.TXTDescripcion.Enter += new System.EventHandler(this.TXTModelo_Enter);
             // 
@@ -581,7 +581,7 @@
             this.SWBEstado.OnTextColor = System.Drawing.Color.White;
             this.SWBEstado.Size = new System.Drawing.Size(149, 26);
             this.SWBEstado.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.SWBEstado.TabIndex = 9;
+            this.SWBEstado.TabIndex = 0;
             this.SWBEstado.Value = true;
             this.SWBEstado.ValueObject = "Y";
             // 

@@ -139,7 +139,7 @@ namespace SistemaDeGestion2026
                 DINPrecioVenta.Focus();
                 respuesta = false;
             }
-            else if ((DINPrecioMinimo.Value <= 0) && (DINPrecioMinimo.Value > DINPrecioVenta.Value))
+            else if ((DINPrecioMinimo.Value <= 0) || (DINPrecioMinimo.Value > DINPrecioVenta.Value))
             {
                 MessageBox.Show("Introduzca un precio de venta mínimo válido", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 DINPrecioMinimo.Focus();
@@ -298,7 +298,7 @@ namespace SistemaDeGestion2026
         {
             try
             {
-                FinalFrame = new VideoCaptureDevice(CaptureDevice[CaptureDevice.Count - 1].MonikerString);// specified web cam and its filter moniker string
+                FinalFrame = new VideoCaptureDevice(CaptureDevice[0].MonikerString);// specified web cam and its filter moniker string
                 FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);// click button event is fired, 
                 FinalFrame.Start();
             }
@@ -481,7 +481,7 @@ namespace SistemaDeGestion2026
                 {
                     producto.papdcodpro = this.codProMod;
                 }
-                SWBEstado.Value = producto.capdestpro;
+                producto.capdestpro =  SWBEstado.Value;
 
 
                 if (LBLCodigoDeBarras.Text == "SIN CÓDIGO" || LBLCodigoDeBarras.Text == "LECTOR ACTIVO")
