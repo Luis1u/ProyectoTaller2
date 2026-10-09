@@ -22,16 +22,15 @@ namespace SistemaDeGestion2026
         public aproduc producto = new aproduc();
 
         #endregion
+
+        #region Constructor
         public FRMVenta_Registrar()
         {
             InitializeComponent();
         }
+        #endregion
 
-        private void FRMVenta_Registrar_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Eventos
         private void TXTNitCliente_Leave(object sender, EventArgs e)
         {
             cliente.cacenitcli = TXTNitCliente.Text;
@@ -67,10 +66,7 @@ namespace SistemaDeGestion2026
             }
         }
 
-        private void TXTNitCliente_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void BTNCodigoDeBarras_Click(object sender, EventArgs e)
         {
@@ -90,15 +86,15 @@ namespace SistemaDeGestion2026
                 else
                 {
                     producto.capdcodbar = LBLCodigoDeBarras.Text;
-                    if(producto.ObtenerDatosCodigo(false, producto.capdcodbar))
+                    if (producto.ObtenerDatosCodigo(false, producto.capdcodbar))
                     {
-                        MessageBox.Show("Producto encontrado "+producto.capddespro);
+                        MessageBox.Show("Producto encontrado " + producto.capddespro);
 
                     }
-                    
+
                 }
                 lectorCBHabilitado = false;
-               
+
             }
         }
 
@@ -113,5 +109,10 @@ namespace SistemaDeGestion2026
                 LBLCodigoDeBarras.Text += e.KeyChar;
             }
         }
+        #endregion
+
+        #region Metodos
+        #endregion
+
     }
 }

@@ -92,7 +92,7 @@
             this.DTGLista.DefaultCellStyle = dataGridViewCellStyle4;
             this.DTGLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGLista.EnableHeadersVisualStyles = false;
-            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
             this.DTGLista.Location = new System.Drawing.Point(94, 73);
             this.DTGLista.MultiSelect = false;
             this.DTGLista.Name = "DTGLista";
@@ -311,7 +311,7 @@
             this.BTNReporte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BTNReporte.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNReporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTNReporte.Image = global::SistemaDeGestion2026.Properties.Resources.icons8_cliente_100;
+            this.BTNReporte.Image = global::SistemaDeGestion2026.Properties.Resources.icons8_cliente_100_imprimir;
             this.BTNReporte.ImageFixedSize = new System.Drawing.Size(60, 60);
             this.BTNReporte.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.BTNReporte.Location = new System.Drawing.Point(0, 254);
@@ -326,7 +326,7 @@
             this.BTNModificar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BTNModificar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNModificar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTNModificar.Image = global::SistemaDeGestion2026.Properties.Resources.icons8_cliente_100;
+            this.BTNModificar.Image = global::SistemaDeGestion2026.Properties.Resources.icons8_cliente_100_editar;
             this.BTNModificar.ImageFixedSize = new System.Drawing.Size(60, 60);
             this.BTNModificar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.BTNModificar.Location = new System.Drawing.Point(0, 143);
@@ -342,7 +342,7 @@
             this.BTNRegistrar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BTNRegistrar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNRegistrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTNRegistrar.Image = global::SistemaDeGestion2026.Properties.Resources.icons8_cliente_100;
+            this.BTNRegistrar.Image = global::SistemaDeGestion2026.Properties.Resources.icons8_cliente_100_agregar;
             this.BTNRegistrar.ImageFixedSize = new System.Drawing.Size(60, 60);
             this.BTNRegistrar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.BTNRegistrar.Location = new System.Drawing.Point(0, 32);

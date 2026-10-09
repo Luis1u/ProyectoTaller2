@@ -12,14 +12,17 @@ namespace SistemaDeGestion2026
 {
     public partial class FRMVenta_Lista : DevComponents.DotNetBar.Office2007Form
     {
+        #region Variables
+        #endregion
+        #region Constructor
         public FRMVenta_Lista()
         {
             InitializeComponent();
         }
-
-        private void FRMVenta_Lista_Load(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
+        #region Metodos
+        #endregion
+        #region Eventos
+        #endregion
     }
 }

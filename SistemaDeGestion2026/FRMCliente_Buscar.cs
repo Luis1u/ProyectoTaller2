@@ -30,7 +30,7 @@ namespace SistemaDeGestion2026
         }
         #endregion
 
-        
+        #region Metodos
         private void ActualizarGrid()
         {
             DTGLista.Rows.Clear();
@@ -63,16 +63,13 @@ namespace SistemaDeGestion2026
                
             }
         }
+        #endregion
+
+        #region Evetos
 
         private void FRMCliente_Buscar_Load(object sender, EventArgs e)
         {
             ActualizarGrid();
-        }
-
-        private void BTNFiltrar_Click(object sender, EventArgs e)
-        {
-           
-
         }
 
         private void BTNAgregarPersona_Click(object sender, EventArgs e)
@@ -103,7 +100,8 @@ namespace SistemaDeGestion2026
         private void BTNAceptar_Click(object sender, EventArgs e)
         {
             if (DTGLista.SelectedRows.Count == 1)
-            { 
+            {
+                cliente.pacecodcli = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
                 if (cliente.ObtenerDatos())
                 {
                     seleccionadoOk = true;
@@ -124,5 +122,8 @@ namespace SistemaDeGestion2026
                 }
             }
         }
+
+        #endregion
+
     }
 }

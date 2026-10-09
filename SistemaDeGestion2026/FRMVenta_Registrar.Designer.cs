@@ -361,7 +361,6 @@
             this.TXTNitCliente.TabIndex = 42;
             this.TXTNitCliente.UseWaitCursor = true;
             this.TXTNitCliente.WatermarkText = "Nit del Cliente";
-            this.TXTNitCliente.TextChanged += new System.EventHandler(this.TXTNitCliente_TextChanged);
             this.TXTNitCliente.Leave += new System.EventHandler(this.TXTNitCliente_Leave);
             // 
             // GPFotografia
@@ -631,7 +630,6 @@
             this.DoubleBuffered = true;
             this.Name = "FRMVenta_Registrar";
             this.Text = "FRMVenta_Registrar";
-            this.Load += new System.EventHandler(this.FRMVenta_Registrar_Load);
             this.groupPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).EndInit();
             this.groupPanel3.ResumeLayout(false);

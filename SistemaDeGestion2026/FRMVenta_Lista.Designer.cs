@@ -50,10 +50,10 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EPNFiltrar = new DevComponents.DotNetBar.ExpandablePanel();
-            this.BTNFiltrar = new DevComponents.DotNetBar.ButtonX();
             this.TXTFiltrar = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.IINFilas = new DevComponents.Editors.IntegerInput();
             this.EPNOpciones = new DevComponents.DotNetBar.ExpandablePanel();
+            this.BTNFiltrar = new DevComponents.DotNetBar.ButtonX();
             this.BTNReporte = new DevComponents.DotNetBar.ButtonX();
             this.BTNModificar = new DevComponents.DotNetBar.ButtonX();
             this.BTNRegistrar = new DevComponents.DotNetBar.ButtonX();
@@ -101,7 +101,7 @@
             this.DTGLista.DefaultCellStyle = dataGridViewCellStyle6;
             this.DTGLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGLista.EnableHeadersVisualStyles = false;
-            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DTGLista.Location = new System.Drawing.Point(94, 73);
             this.DTGLista.MultiSelect = false;
             this.DTGLista.Name = "DTGLista";
@@ -267,18 +267,6 @@
             this.EPNFiltrar.TitleStyle.GradientAngle = 90;
             this.EPNFiltrar.TitleText = "Filtrar";
             // 
-            // BTNFiltrar
-            // 
-            this.BTNFiltrar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNFiltrar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNFiltrar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
-            this.BTNFiltrar.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNFiltrar.Location = new System.Drawing.Point(295, 41);
-            this.BTNFiltrar.Name = "BTNFiltrar";
-            this.BTNFiltrar.Size = new System.Drawing.Size(27, 26);
-            this.BTNFiltrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNFiltrar.TabIndex = 6;
-            // 
             // TXTFiltrar
             // 
             this.TXTFiltrar.BackColor = System.Drawing.Color.White;
@@ -293,7 +281,7 @@
             this.TXTFiltrar.Location = new System.Drawing.Point(93, 41);
             this.TXTFiltrar.Name = "TXTFiltrar";
             this.TXTFiltrar.PreventEnterBeep = true;
-            this.TXTFiltrar.Size = new System.Drawing.Size(196, 23);
+            this.TXTFiltrar.Size = new System.Drawing.Size(196, 20);
             this.TXTFiltrar.TabIndex = 5;
             this.TXTFiltrar.WatermarkText = "Datos a buscar...";
             // 
@@ -345,12 +333,24 @@
             this.EPNOpciones.TitleStyle.GradientAngle = 90;
             this.EPNOpciones.TitleText = "Menú";
             // 
+            // BTNFiltrar
+            // 
+            this.BTNFiltrar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNFiltrar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNFiltrar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
+            this.BTNFiltrar.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNFiltrar.Location = new System.Drawing.Point(295, 41);
+            this.BTNFiltrar.Name = "BTNFiltrar";
+            this.BTNFiltrar.Size = new System.Drawing.Size(27, 26);
+            this.BTNFiltrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNFiltrar.TabIndex = 6;
+            // 
             // BTNReporte
             // 
             this.BTNReporte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BTNReporte.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNReporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTNReporte.Image = global::SistemaDeGestion2026.Properties.Resources.ic_venta;
+            this.BTNReporte.Image = global::SistemaDeGestion2026.Properties.Resources.ic_venta_imprimir;
             this.BTNReporte.ImageFixedSize = new System.Drawing.Size(60, 60);
             this.BTNReporte.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.BTNReporte.Location = new System.Drawing.Point(0, 254);
@@ -365,7 +365,7 @@
             this.BTNModificar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BTNModificar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNModificar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTNModificar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_venta;
+            this.BTNModificar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_venta_editar;
             this.BTNModificar.ImageFixedSize = new System.Drawing.Size(60, 60);
             this.BTNModificar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.BTNModificar.Location = new System.Drawing.Point(0, 143);
@@ -381,7 +381,7 @@
             this.BTNRegistrar.BackgroundImage = global::SistemaDeGestion2026.Properties.Resources.ic_producto_añadir;
             this.BTNRegistrar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNRegistrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTNRegistrar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_venta;
+            this.BTNRegistrar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_venta_agregar;
             this.BTNRegistrar.ImageFixedSize = new System.Drawing.Size(60, 60);
             this.BTNRegistrar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.BTNRegistrar.Location = new System.Drawing.Point(0, 32);
@@ -402,7 +402,6 @@
             this.DoubleBuffered = true;
             this.Name = "FRMVenta_Lista";
             this.Text = "FRMVenta_Lista";
-            this.Load += new System.EventHandler(this.FRMVenta_Lista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).EndInit();
             this.EPNFiltrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IINFilas)).EndInit();

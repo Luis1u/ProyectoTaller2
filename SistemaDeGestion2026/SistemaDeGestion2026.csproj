@@ -464,7 +464,13 @@
     <None Include="Resources\ic_codigoDeBarras.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-cliente-100_agregar.png" />
+    <None Include="Resources\icons8-cliente-100_editar.png" />
+    <None Include="Resources\icons8-cliente-100_imprimir.png" />
     <Content Include="Resources\ic_codigo_barras.png" />
+    <None Include="Resources\ic_venta_imprimir.png" />
+    <None Include="Resources\ic_venta_editar.png" />
+    <None Include="Resources\ic_venta_agregar.png" />
     <None Include="Resources\ic_venta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
