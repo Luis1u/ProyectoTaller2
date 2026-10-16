@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -68,6 +69,12 @@
             this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
             this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
             this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
+            this.CMSMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LBLTotal = new DevComponents.DotNetBar.LabelX();
+            this.LBLTotalALiteral = new DevComponents.DotNetBar.LabelX();
+            this.LBLTotalNumero = new DevComponents.DotNetBar.LabelX();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).BeginInit();
             this.groupPanel3.SuspendLayout();
@@ -76,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DINPrecioMinimo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IINStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCBCamara)).BeginInit();
+            this.CMSMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupPanel2
@@ -144,6 +152,7 @@
             this.Column10,
             this.Column11,
             this.Column2});
+            this.DTGLista.ContextMenuStrip = this.CMSMenu;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,7 +163,7 @@
             this.DTGLista.DefaultCellStyle = dataGridViewCellStyle5;
             this.DTGLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGLista.EnableHeadersVisualStyles = false;
-            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DTGLista.Location = new System.Drawing.Point(0, 0);
             this.DTGLista.MultiSelect = false;
             this.DTGLista.Name = "DTGLista";
@@ -604,7 +613,7 @@
             this.BTNSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTNSalir.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir;
             this.BTNSalir.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNSalir.Location = new System.Drawing.Point(722, 447);
+            this.BTNSalir.Location = new System.Drawing.Point(711, 493);
             this.BTNSalir.Name = "BTNSalir";
             this.BTNSalir.Size = new System.Drawing.Size(121, 51);
             this.BTNSalir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -617,7 +626,7 @@
             this.BTNLimpiar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNLimpiar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_limpiar;
             this.BTNLimpiar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNLimpiar.Location = new System.Drawing.Point(595, 447);
+            this.BTNLimpiar.Location = new System.Drawing.Point(584, 493);
             this.BTNLimpiar.Name = "BTNLimpiar";
             this.BTNLimpiar.Size = new System.Drawing.Size(121, 51);
             this.BTNLimpiar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -630,18 +639,79 @@
             this.BTNGrabar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNGrabar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_guardar;
             this.BTNGrabar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNGrabar.Location = new System.Drawing.Point(468, 447);
+            this.BTNGrabar.Location = new System.Drawing.Point(457, 495);
             this.BTNGrabar.Name = "BTNGrabar";
             this.BTNGrabar.Size = new System.Drawing.Size(121, 51);
             this.BTNGrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNGrabar.TabIndex = 39;
             this.BTNGrabar.Text = "&Grabar";
             // 
+            // CMSMenu
+            // 
+            this.CMSMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.CMSMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modificarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
+            this.CMSMenu.Name = "CMSMenu";
+            this.CMSMenu.Size = new System.Drawing.Size(126, 48);
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.modificarToolStripMenuItem.Text = "&Modificar";
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.eliminarToolStripMenuItem.Text = "&Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // LBLTotal
+            // 
+            // 
+            // 
+            // 
+            this.LBLTotal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLTotal.Location = new System.Drawing.Point(839, 449);
+            this.LBLTotal.Name = "LBLTotal";
+            this.LBLTotal.Size = new System.Drawing.Size(43, 23);
+            this.LBLTotal.TabIndex = 47;
+            this.LBLTotal.Text = "TOTAL:";
+            // 
+            // LBLTotalALiteral
+            // 
+            // 
+            // 
+            // 
+            this.LBLTotalALiteral.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLTotalALiteral.Location = new System.Drawing.Point(16, 452);
+            this.LBLTotalALiteral.Name = "LBLTotalALiteral";
+            this.LBLTotalALiteral.Size = new System.Drawing.Size(579, 23);
+            this.LBLTotalALiteral.TabIndex = 49;
+            this.LBLTotalALiteral.Text = "SON: CERO 00/100";
+            // 
+            // LBLTotalNumero
+            // 
+            // 
+            // 
+            // 
+            this.LBLTotalNumero.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLTotalNumero.Location = new System.Drawing.Point(890, 449);
+            this.LBLTotalNumero.Name = "LBLTotalNumero";
+            this.LBLTotalNumero.Size = new System.Drawing.Size(52, 23);
+            this.LBLTotalNumero.TabIndex = 50;
+            this.LBLTotalNumero.Text = "0";
+            // 
             // FRMVenta_Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 508);
+            this.ClientSize = new System.Drawing.Size(960, 547);
+            this.Controls.Add(this.LBLTotalNumero);
+            this.Controls.Add(this.LBLTotalALiteral);
+            this.Controls.Add(this.LBLTotal);
             this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.BTNBuscarCliente);
             this.Controls.Add(this.TXTNombreCliente);
@@ -664,6 +734,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DINPrecioMinimo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IINStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCBCamara)).EndInit();
+            this.CMSMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -703,5 +774,11 @@
         private DevComponents.DotNetBar.Controls.SwitchButton SWBEstado;
         private DevComponents.DotNetBar.ButtonX BTNBuscarProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.ContextMenuStrip CMSMenu;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private DevComponents.DotNetBar.LabelX LBLTotal;
+        private DevComponents.DotNetBar.LabelX LBLTotalALiteral;
+        private DevComponents.DotNetBar.LabelX LBLTotalNumero;
     }
 }

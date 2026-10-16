@@ -33,27 +33,23 @@ namespace SistemaDeGestion2026
 
         #region Numero a literal
         private static readonly string[] unidades = {
-        "", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"
-    };
+    "", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
 
         private static readonly string[] especiales = {
-        "diez", "once", "doce", "trece", "catorce", "quince",
-        "dieciséis", "diecisiete", "dieciocho", "diecinueve"
-    };
+    "diez", "once", "doce", "trece", "catorce", "quince",
+    "dieciséis", "diecisiete", "dieciocho", "diecinueve"};
 
         private static readonly string[] decenas = {
-        "", "", "veinte", "treinta", "cuarenta", "cincuenta",
-        "sesenta", "setenta", "ochenta", "noventa"
-    };
+    "", "", "veinte", "treinta", "cuarenta", "cincuenta",
+    "sesenta", "setenta", "ochenta", "noventa"};
 
         private static readonly string[] centenas = {
-        "", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos",
-        "seiscientos", "setecientos", "ochocientos", "novecientos"
-    };
+    "", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos",
+    "seiscientos", "setecientos", "ochocientos", "novecientos"};
 
         public static string ConvertirNumeroALetras(double numero)
         {
-            // Separar parte entera y decimal
+            // Separar parte entera y decimal (Corregido)
             long parteEntera = (long)Math.Floor(Math.Abs(numero));
             int parteDecimal = (int)Math.Round((Math.Abs(numero) - parteEntera) * 100);
 
@@ -75,10 +71,11 @@ namespace SistemaDeGestion2026
                 resultado.Append(ConvertirEntero(parteEntera));
             }
 
-            // Agregar parte decimal
+            // Agregar parte decimal con formato de barra
             resultado.Append($" {parteDecimal:00}/100");
 
-            return resultado.ToString();
+            // Devuelve todo el texto en MAYÚSCULAS
+            return resultado.ToString().ToUpper();
         }
 
         private static string ConvertirEntero(long numero)
@@ -91,7 +88,7 @@ namespace SistemaDeGestion2026
             }
             else if (numero < 20)
             {
-                return especiales[numero - 10];
+                return especiales[numero - 10]; // (Corregido)
             }
             else if (numero < 100)
             {

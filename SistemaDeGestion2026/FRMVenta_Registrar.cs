@@ -25,6 +25,8 @@ namespace SistemaDeGestion2026
 
         private bool productoOk = false;
 
+        private double total = 0;
+
         #endregion
 
         #region Constructor
@@ -138,7 +140,7 @@ namespace SistemaDeGestion2026
 
         private void FRMVenta_Registrar_Load(object sender, EventArgs e)
         {
-           
+            LBLTotalNumero.Text = "0";
             lectorCBHabilitado = false;
             LBLCodigoDeBarras.Text = "LECTOR INACTIVO";
             LBLCodigoDeBarras.BackColor = Color.LightSalmon;
@@ -202,9 +204,52 @@ namespace SistemaDeGestion2026
                 DTGLista[8, DTGLista.RowCount - 1].Value = item.caivsubtot;
 
             }
+            CalcularTotal();
+            
         }
+
         #endregion
 
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("¿Está seguro que desea borrar este producto?",
+                            "Pregunta",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question,
+                            MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                EliminarItem(DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString());
+    
+                }
+                
+            }
+           
+        }
+        private void CalcularTotal()
+        {
+            total = 0;
+           
+            foreach (liteven item in listaItems)
+            {
+           
+               
+                total += double.Parse(item.caivsubtot.ToString());
+
+            }
+            LBLTotalNumero.Text = total.ToString("F2");
+            string numeroEnLetras = MetodosGenerales.ConvertirNumeroALetras(total);
+            LBLTotalALiteral.Text ="SON: "+ numeroEnLetras;
+        }
+        private void EliminarItem(string CodPro)
+        {
+            listaItems.RemoveAll(x => x.faivcodpro == CodPro);
+            ActualizarGridItems(); 
+           
+        }
+
        
+
     }
 }
