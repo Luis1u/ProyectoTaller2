@@ -190,8 +190,9 @@ namespace SistemaDeGestion2026
 
         private void BTNVentas_Click(object sender, EventArgs e)
         {
-            FRMVenta_Registrar v = new FRMVenta_Registrar();
-            v.Show();
+
+            FRMVenta_Registrar a = new FRMVenta_Registrar();
+            a.Show();
         }
     }
 }
