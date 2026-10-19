@@ -108,5 +108,15 @@ namespace SistemaDeGestion2026
             }
         }
         #endregion
+
+        private void BTNAgregarProducto_Click(object sender, EventArgs e)
+        {
+            FRMProducto_Registrar a = new FRMProducto_Registrar();
+            a.ShowDialog();
+            if (a.actualizar)
+            {
+                ActualizarGrid();
+            }
+        }
     }
 }

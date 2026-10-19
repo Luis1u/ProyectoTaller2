@@ -158,6 +158,7 @@ namespace SistemaDeGestion2026
             else
             {
                 ApagarCamara();
+               
             }
         }
 

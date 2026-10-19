@@ -240,7 +240,7 @@ namespace SistemaDeGestion2026
             }
             LBLTotalNumero.Text = total.ToString("F2");
             string numeroEnLetras = MetodosGenerales.ConvertirNumeroALetras(total);
-            LBLTotalALiteral.Text ="SON: "+ numeroEnLetras;
+            LBLTotalALiteral.Text ="SON: "+ numeroEnLetras +". BOLIVIANOS";
         }
         private void EliminarItem(string CodPro)
         {
@@ -249,7 +249,6 @@ namespace SistemaDeGestion2026
            
         }
 
-       
-
+        
     }
 }

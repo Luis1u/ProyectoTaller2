@@ -79,7 +79,7 @@
             this.DTGLista.DefaultCellStyle = dataGridViewCellStyle3;
             this.DTGLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGLista.EnableHeadersVisualStyles = false;
-            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
             this.DTGLista.Location = new System.Drawing.Point(0, 73);
             this.DTGLista.MultiSelect = false;
             this.DTGLista.Name = "DTGLista";
@@ -256,6 +256,7 @@
             this.Controls.Add(this.DTGLista);
             this.Controls.Add(this.EPNFiltrar);
             this.Name = "FRMCliente_Buscar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMCliente_Buscar";
             this.Load += new System.EventHandler(this.FRMCliente_Buscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).EndInit();
