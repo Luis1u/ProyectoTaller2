@@ -214,8 +214,8 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("¿Está seguro que desea borrar este producto?",
-                            "Pregunta",
+                if (MessageBox.Show("¿Está seguro que desea borrar este producto? "+ DTGLista[5, DTGLista.SelectedRows[0].Index].Value.ToString(),
+                            "Pregunta"  ,
                             MessageBoxButtons.YesNo,
                             MessageBoxIcon.Question,
                             MessageBoxDefaultButton.Button2) == DialogResult.Yes)
@@ -249,6 +249,22 @@ namespace SistemaDeGestion2026
            
         }
 
-        
+        private void DTGLista_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (DTGLista.SelectedRows.Count > 0)
+                {
+                    if (MessageBox.Show("¿Está seguro que desea borrar este producto? "+ DTGLista[5, DTGLista.SelectedRows[0].Index].Value.ToString(),
+                                "Pregunta" ,
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question,
+                                MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    {
+                        EliminarItem(DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString());
+                    }
+                }
+            }
+        }
     }
 }
