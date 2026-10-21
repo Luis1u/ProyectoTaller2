@@ -118,11 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icons8-cliente-100_imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-cliente-100_imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ic_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cliente-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-cliente-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_cerrar_sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_cerrar_sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,14 +133,14 @@
   <data name="ic_ingresar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_ingresar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ic_persona_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_persona_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ic_categoria_añadir1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_categoria_añadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_mostrar_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_mostrar_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_usuario_cambiar_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_usuario_cambiar_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,17 +154,14 @@
   <data name="ic_venta_editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_venta_editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_categoria_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_categoria_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NoImagen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NoImagen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_categoria_añadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_categoria_añadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_categoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_categoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_persona_reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_persona_reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +196,8 @@
   <data name="ic_usuario_reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_usuario_reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_venta_imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_venta_imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_categoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_categoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BannerTiendaDeRopa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BannerTiendaDeRopa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,14 +211,17 @@
   <data name="ic_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-proveedor-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-proveedor-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BannerTiendaDeRopa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BannerTiendaDeRopa1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_iniciar_sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_iniciar_sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_persona_reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_persona_reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_categoria_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_categoria_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +241,8 @@
   <data name="ic_persona_nuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_persona_nuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-proveedor-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-proveedor-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-cliente-100_editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cliente-100_editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,16 +256,16 @@
   <data name="ic_producto_añadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_producto_añadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_persona_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_persona_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_venta_imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_venta_imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-cliente-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-cliente-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="banner_proyecto_ropa_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\banner_proyecto_ropa_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cliente-100_imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-cliente-100_imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

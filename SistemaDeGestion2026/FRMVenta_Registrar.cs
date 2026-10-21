@@ -1,4 +1,5 @@
 ﻿using CapaRN;
+using SistemaDeGestion2026.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,8 @@ namespace SistemaDeGestion2026
         public aproduc producto = new aproduc();
 
         private bool productoOk = false;
-
+        private liteven itemModificar = new liteven();
+        private bool modificarItem = false;
         private double total = 0;
 
         #endregion
@@ -164,12 +166,24 @@ namespace SistemaDeGestion2026
 
             if (item != null)
             {
+                if ((item.caivcanite + 1) > pro.capdstopro)
+                {
+                    MessageBox.Show("No se puede agregar mas unidades de este producto, stock insuficiente: "+ pro.capddespro);
+                    return;
+                }
                 item.caivcanite += 1;
                 item.caivsubtot = item.caivcanite * item.caivpreuni;
+
             }
             else
 
             {
+                if (pro.capdstopro < 1)
+                {
+                    MessageBox.Show("No se puede agregar este producto, stock insuficiente: "+ pro.capddespro);
+                    return;
+                }
+                
                 item = new liteven();
                 item.faivcodpro = pro.papdcodpro;
                 item.capdmodpro = pro.capdmodpro;
@@ -265,6 +279,62 @@ namespace SistemaDeGestion2026
                     }
                 }
             }
+        }
+
+        
+
+        private void DTGLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            itemModificar = listaItems.Find(x => x.faivcodpro == DTGLista[0, e.RowIndex].Value.ToString());
+            modificarItem = true;
+            if (itemModificar != null)
+            {
+                TXTDescripcion.Text = itemModificar.capddespro;
+                DINCantidad.Value = itemModificar.caivcanite;
+                DINPrecio.Value = (Double)itemModificar.caivpreuni;
+                producto.papdcodpro = itemModificar.faivcodpro;
+                if (producto.ObtenerDatos())
+                {
+                    if (producto.capdfotpro == "")
+                    {
+
+                        PCBFotografia.Image = Resources.NoImagen;
+                    }
+                    else
+                    {
+                        PCBFotografia.Image = MetodosGenerales.ConvertBase64StringToImage(producto.capdfotpro);
+                    }
+                }
+            }
+
+        }
+
+        private void BTNModificarProducto_Click(object sender, EventArgs e)
+        {
+            if (modificarItem)
+            {
+
+                
+                itemModificar.caivcanite = (int)DINCantidad.Value;
+                itemModificar.caivpreuni = (Decimal)DINPrecio.Value;
+                itemModificar.caivsubtot = itemModificar.caivcanite * itemModificar.caivpreuni;
+                ActualizarGridItems();
+                modificarItem = false;
+                TXTDescripcion.Text = "Descripción del producto";
+                DINCantidad.Value = 0;
+                DINPrecio.Value = 0;
+                PCBFotografia.Image = Resources.NoImagen;
+            }
+        }
+
+        private void BTNLimpiarProducto_Click(object sender, EventArgs e)
+        {
+            modificarItem = false;
+            TXTDescripcion.Text = "Descripción del producto";
+            DINCantidad.Value = 0;
+            DINPrecio.Value = 0;
+            PCBFotografia.Image = Resources.NoImagen;
         }
     }
 }

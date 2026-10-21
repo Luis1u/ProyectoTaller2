@@ -473,6 +473,7 @@
     <None Include="Resources\ic_codigoDeBarras.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ic_modificar.png" />
     <None Include="Resources\icons8-cliente-100_agregar.png" />
     <None Include="Resources\icons8-cliente-100_editar.png" />
     <None Include="Resources\icons8-cliente-100_imprimir.png" />

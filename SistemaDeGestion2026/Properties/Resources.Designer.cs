@@ -273,6 +273,16 @@ namespace SistemaDeGestion2026.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_modificar {
+            get {
+                object obj = ResourceManager.GetObject("ic_modificar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_mostrar_password {
             get {
                 object obj = ResourceManager.GetObject("ic_mostrar_password", resourceCulture);
