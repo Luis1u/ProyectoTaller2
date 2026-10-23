@@ -314,7 +314,22 @@ namespace SistemaDeGestion2026
         {
             if (modificarItem)
             {
-
+                if (((int)DINCantidad.Value) < 1)
+                {
+                    MessageBox.Show("La cantidad no puede ser menor a cero");
+                    DINCantidad.Value = itemModificar.caivcanite;
+                    return;
+                }else if(((int)DINCantidad.Value) > producto.capdstopro)
+                {
+                    MessageBox.Show("El nuevo monto introducido sobrepasa el stock actual");
+                    DINCantidad.Value = itemModificar.caivcanite;
+                    return;
+                }else if (((Decimal)DINPrecio.Value) < producto.capdpremin)
+                {
+                    MessageBox.Show("El precio modificado es menor al precio minimo");
+                    DINPrecio.Value = (Double)itemModificar.caivpreuni;
+                    return;
+                }
                 
                 itemModificar.caivcanite = (int)DINCantidad.Value;
                 itemModificar.caivpreuni = (Decimal)DINPrecio.Value;

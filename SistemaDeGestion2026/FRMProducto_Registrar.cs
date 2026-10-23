@@ -502,6 +502,7 @@ namespace SistemaDeGestion2026
                 producto.capdcolpro = CMBColor.Text;
                 producto.capdtalpro = CMBTalla.Text;
                 producto.capddespro = TXTDescripcion.Text;
+                producto.capdstopro = IINStock.Value;
 
                 producto.capdpreven = (decimal)DINPrecioVenta.Value;
                 producto.capdpremin = (decimal)DINPrecioMinimo.Value;
