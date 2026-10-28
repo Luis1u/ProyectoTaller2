@@ -194,6 +194,57 @@ namespace CapaRN
                 return true;
             }
         }
+        public bool Grabar(List<liteven> Lista)
+        {
+            this.Conexion.Conectar();
+            string sql = "insert into aiteven (" +
+                                           "caivpreuni," +
+                                           "caivestite," +
+                                           "caivcanite," +
+                                           "caivsubtot," +
+                                           "faivcodpro," +
+                                           "faivcodven," +
+                                           "paivcodite" +
+                                           ") " +
+                          "values ";
+
+            foreach (liteven item in Lista)
+            {
+                sql += "(" +
+                        "@caivpreuni," +
+                        "@caivestite," +
+                        "@caivcanite," +
+                        "@caivsubtot," +
+                        "@faivcodpro," +
+                        "@faivcodven," +
+                        "@paivcodite" +
+                        "),";
+                this.Conexion.PrepararComando(sql);
+                this.Conexion.AsignarParametroDecimal("@caivpreuni", item.caivpreuni);
+                this.Conexion.AsignarParametroLogico("@caivestite", item.caivestite);
+                this.Conexion.AsignarParametroEntero("@caivcanite", item.caivcanite);
+                this.Conexion.AsignarParametroDecimal("@caivsubtot", item.caivsubtot);
+                this.Conexion.AsignarParametroCadena("@faivcodpro", item.faivcodpro);
+                this.Conexion.AsignarParametroCadena("@faivcodven", item.faivcodven);
+                this.Conexion.AsignarParametroCadena("@paivcodite", item.paivcodite);
+                sql = this.Conexion.GetComandoSQL();
+            }
+
+            sql = sql.Substring(0, sql.Length - 1) + ";";
+            this.Conexion.PrepararComando(sql);
+
+            try
+            {
+                this.Conexion.EjecutarTransaccion();
+                this.Conexion.Desconectar();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.Conexion.Desconectar();
+                return false;
+            }
+        }
         public bool Modificar()
         {
             if (!this.VerificarExistencia())

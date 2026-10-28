@@ -14,7 +14,7 @@ namespace SistemaDeGestion2026
     public partial class FRMPrincipal : DevComponents.DotNetBar.Office2007RibbonForm
     {
         #region Variables
-        public aususis usuario = new aususis();
+        public  aususis  usuario = new aususis();
         public aperson persona = new aperson();        
         #endregion
 
@@ -38,8 +38,8 @@ namespace SistemaDeGestion2026
             a.Show();
             BTNActualizarPassword.Enabled = false;
             BTNCerrarSesion.Enabled = false;
-            //RTBAdministracion.Enabled = false;
-            //RBPAdministracion.Enabled = false;
+            RTBAdministracion.Enabled = false;
+            RBPAdministracion.Enabled = false;
             BTNLogin.Enabled = true;
             BTNLoginHuella.Enabled = true;
         }

@@ -401,8 +401,46 @@ namespace CapaRN
 
                     return true;
                 } 
-            } 
-            public bool Modificar()
+            }
+        public bool DisminuirStock(List<liteven> Lista)
+        {
+            this.Conexion.Conectar();
+
+            string sql = "UPDATE aproduc AS p SET " +
+                         "capdstopro = p.capdstopro - venta.caivcanite " +
+                         "FROM (VALUES ";
+
+            foreach (liteven item in Lista)
+            {
+                sql += "(@faivcodpro, @caivcanite),";
+
+                this.Conexion.PrepararComando(sql);
+                this.Conexion.AsignarParametroCadena("@faivcodpro", item.faivcodpro);
+                this.Conexion.AsignarParametroEntero("@caivcanite", item.caivcanite);
+                sql = this.Conexion.GetComandoSQL();
+            }
+
+            sql = sql.Substring(0, sql.Length - 1);
+
+            sql += ") AS venta(faivcodpro, caivcanite) " +
+                   "WHERE p.papdcodpro = venta.faivcodpro " +
+                   "AND p.capdstopro >= venta.caivcanite;";
+
+            this.Conexion.PrepararComando(sql);
+
+            try
+            {
+                this.Conexion.EjecutarTransaccion();
+                this.Conexion.Desconectar();
+                return true;
+            }
+            catch (Exception)
+            {
+                this.Conexion.Desconectar();
+                return false;
+            }
+        }
+        public bool Modificar()
             { 
                 if (!this.VerificarExistencia())
                 {

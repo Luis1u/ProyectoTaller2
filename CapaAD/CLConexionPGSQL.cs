@@ -139,6 +139,10 @@ namespace CapaAD
             sw.Flush();
             sw.Close();
         }
+        public String GetComandoSQL()
+        {
+            return this.Comando.CommandText;
+        }
 
         /// <summary>
         /// Prepara la ejecución de un comando SQL        

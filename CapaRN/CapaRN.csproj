@@ -51,6 +51,7 @@
     <Compile Include="aproduc.cs" />
     <Compile Include="aprovee.cs" />
     <Compile Include="aususis.cs" />
+    <Compile Include="avenpro.cs" />
     <Compile Include="lclient.cs" />
     <Compile Include="liteven.cs" />
     <Compile Include="lproduc.cs" />

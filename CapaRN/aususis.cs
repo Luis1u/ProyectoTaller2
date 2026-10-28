@@ -26,8 +26,11 @@ namespace CapaRN
             private string _causcodhu2;
             private string _causcodhu3;
             private string _causcodhu4;
-            //Instancia para conexion a PostgreSQL 8.2
-            private CLConexionPGSQL Conexion;
+
+         
+
+        //Instancia para conexion a PostgreSQL 8.2
+        private CLConexionPGSQL Conexion;
 		#endregion 
 
 		#region Propiedades
@@ -205,6 +208,7 @@ namespace CapaRN
                                  "causcodhu2," +
                                  "causcodhu3," +
                                  "causcodhu4 " +
+                                 
                          "from aususis " +
                          "where " +
                                 "causnomlog = @causnomlog";

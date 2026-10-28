@@ -51,7 +51,7 @@
             this.TXTNombreLogin.Location = new System.Drawing.Point(9, 3);
             this.TXTNombreLogin.Name = "TXTNombreLogin";
             this.TXTNombreLogin.PreventEnterBeep = true;
-            this.TXTNombreLogin.Size = new System.Drawing.Size(233, 26);
+            this.TXTNombreLogin.Size = new System.Drawing.Size(233, 23);
             this.TXTNombreLogin.TabIndex = 0;
             this.TXTNombreLogin.WatermarkText = "Login ";
             // 
@@ -128,7 +128,7 @@
             this.TXTPassword.Name = "TXTPassword";
             this.TXTPassword.PasswordChar = '*';
             this.TXTPassword.PreventEnterBeep = true;
-            this.TXTPassword.Size = new System.Drawing.Size(201, 26);
+            this.TXTPassword.Size = new System.Drawing.Size(201, 23);
             this.TXTPassword.TabIndex = 1;
             this.TXTPassword.WatermarkText = "Password";
             // 
@@ -164,7 +164,7 @@
             // FRMIniciar_Sesion
             // 
             this.AcceptButton = this.BTNIngresar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTNCancelar;
             this.ClientSize = new System.Drawing.Size(256, 145);
@@ -176,6 +176,7 @@
             this.Name = "FRMIniciar_Sesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
+            this.Load += new System.EventHandler(this.FRMIniciar_Sesion_Load);
             this.GPPanelPrincipal.ResumeLayout(false);
             this.ResumeLayout(false);
 

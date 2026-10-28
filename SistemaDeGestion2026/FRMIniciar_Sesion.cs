@@ -74,7 +74,13 @@ namespace SistemaDeGestion2026
             if (VerificarIntegridad())
             { 
                 usuario.causnomlog = TXTNombreLogin.Text;
-                usuario.ObtenerDatosLogin(false, TXTNombreLogin.Text);
+                if (!usuario.ObtenerDatosLogin(false, TXTNombreLogin.Text))
+                {
+                    MessageBox.Show("Usuario y/o clave incorrectos",
+                                       "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 persona.papscodper = usuario.fauscodper;
                 persona.ObtenerDatos();
 
@@ -102,10 +108,19 @@ namespace SistemaDeGestion2026
                         loginExitoso = true;
                         actualizarPassword = false;
                         this.Close();
+                    }else
+                    {
+                        MessageBox.Show("Contraseña incorrecta",
+                                        "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
         }
         #endregion
+
+        private void FRMIniciar_Sesion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

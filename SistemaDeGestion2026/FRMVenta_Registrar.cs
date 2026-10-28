@@ -15,6 +15,19 @@ namespace SistemaDeGestion2026
     public partial class FRMVenta_Registrar : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
+        FRMPrincipal principal = (FRMPrincipal)Application.OpenForms["FRMPrincipal"];
+
+        private avenpro venta = new avenpro();
+        private aiteven item = new aiteven();
+        private xnumcor correlativo = new xnumcor();
+
+        public aususis usuario = new aususis();
+
+        public bool actualizar = false;
+
+
+
+
         private aclient cliente = new aclient();
         private bool clienteOk = false;
 
@@ -146,6 +159,8 @@ namespace SistemaDeGestion2026
             lectorCBHabilitado = false;
             LBLCodigoDeBarras.Text = "LECTOR INACTIVO";
             LBLCodigoDeBarras.BackColor = Color.LightSalmon;
+            usuario.pauscodusu = principal.usuario.pauscodusu;
+            usuario.ObtenerDatos();
         }
 
         private void BTNCodigoDeBarras_Leave(object sender, EventArgs e)
@@ -350,6 +365,89 @@ namespace SistemaDeGestion2026
             DINCantidad.Value = 0;
             DINPrecio.Value = 0;
             PCBFotografia.Image = Resources.NoImagen;
+        }
+
+        private void BTNGrabar_Click(object sender, EventArgs e)
+        {
+            if (Verificar_Integridad())
+            {
+                venta = new avenpro();
+                correlativo.pxnctipcor = "avenpro";
+                if (correlativo.ObtenerSiguiente())
+                {
+                    venta.pavpcodven = correlativo.pxnctipcor + "-" +
+                                       correlativo.cxncnumcor.ToString("D12");
+                }
+                venta.cavpestven = true;
+                venta.cavpfeccre = DateTime.Now;
+                venta.cavpfechor = DateTime.Now;
+                venta.cavpfecmod = DateTime.Now;
+                venta.cavptotven = listaItems.Sum(x => x.caivsubtot);
+                venta.cavpobsven = TXTDescripcion.Text;
+                venta.favpcodcli = cliente.pacecodcli;
+                venta.favpusucre = usuario.pauscodusu;
+                venta.favpusumod = usuario.pauscodusu;
+
+                //Grabado de los items de la venta
+                correlativo.pxnctipcor = "aiteven";
+                if (correlativo.ObtenerSiguiente(listaItems.Count))
+                {
+                    correlativo.cxncnumcor -= listaItems.Count - 1;
+                    foreach (liteven item in listaItems)
+                    {
+
+                        item.paivcodite = correlativo.pxnctipcor + "-" +
+                                          correlativo.cxncnumcor.ToString("D12");
+                        item.faivcodven = venta.pavpcodven;
+                        correlativo.cxncnumcor++;
+                    }
+
+                }
+
+                if (venta.Grabar() && item.Grabar(listaItems) && producto.DisminuirStock(listaItems))
+                {
+                    MessageBox.Show("Venta guardada correctamente!!",
+                                    "Mensaje",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                    //LimpiarCasillas();
+                    this.actualizar = true;
+                    //this.FormClosing -= FRMVenta_Registrar_FormClosing;                    
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Venta no se pudo guardar!!",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+            }
+
+        }
+        private bool Verificar_Integridad()
+        {
+           
+            if (!clienteOk)
+            {
+                MessageBox.Show("Deve seleccionar un cliente",
+                                    "Mensaje",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
+                return false;
+  
+            }else if (listaItems.Count < 1)
+            {
+
+                MessageBox.Show("Deve haber por lo menos un producto en el carrito",
+                                    "Mensaje",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
+                return false;
+            }
+
+            return true;
+
         }
     }
 }
