@@ -26,6 +26,8 @@ namespace CapaRN
         private string _capddespro;
         private string _capdtalpro;
 
+        private int _capdstopro;
+
 
 
 
@@ -57,10 +59,16 @@ namespace CapaRN
             get { return this._capdmodpro; }
             set { this._capdmodpro = value; }
         }
+      
         public string capdnompro
         {
             get { return this._capdnompro; }
             set { this._capdnompro = value; }
+        }
+        public int capdstopro
+        {
+            get { return this._capdstopro; }
+            set { this._capdstopro = value; }
         }
 
         public string capdcodbar
@@ -116,6 +124,7 @@ namespace CapaRN
             this._capdtalpro = "";
             this._capddespro = "";
             this._capdmodpro = "";
+            this._capdstopro = 0;
 
             this.Conexion = new CLConexionPGSQL();
         }

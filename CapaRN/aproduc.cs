@@ -402,44 +402,44 @@ namespace CapaRN
                     return true;
                 } 
             }
-        public bool DisminuirStock(List<liteven> Lista)
-        {
-            this.Conexion.Conectar();
+        //public bool DisminuirStock(List<liteven> Lista)
+        //{
+        //    this.Conexion.Conectar();
 
-            string sql = "UPDATE aproduc AS p SET " +
-                         "capdstopro = p.capdstopro - venta.caivcanite " +
-                         "FROM (VALUES ";
+        //    string sql = "UPDATE aproduc AS p SET " +
+        //                 "capdstopro = p.capdstopro - venta.caivcanite " +
+        //                 "FROM (VALUES ";
 
-            foreach (liteven item in Lista)
-            {
-                sql += "(@faivcodpro, @caivcanite),";
+        //    foreach (liteven item in Lista)
+        //    {
+        //        sql += "(@faivcodpro, @caivcanite),";
 
-                this.Conexion.PrepararComando(sql);
-                this.Conexion.AsignarParametroCadena("@faivcodpro", item.faivcodpro);
-                this.Conexion.AsignarParametroEntero("@caivcanite", item.caivcanite);
-                sql = this.Conexion.GetComandoSQL();
-            }
+        //        this.Conexion.PrepararComando(sql);
+        //        this.Conexion.AsignarParametroCadena("@faivcodpro", item.faivcodpro);
+        //        this.Conexion.AsignarParametroEntero("@caivcanite", item.caivcanite);
+        //        sql = this.Conexion.GetComandoSQL();
+        //    }
 
-            sql = sql.Substring(0, sql.Length - 1);
+        //    sql = sql.Substring(0, sql.Length - 1);
 
-            sql += ") AS venta(faivcodpro, caivcanite) " +
-                   "WHERE p.papdcodpro = venta.faivcodpro " +
-                   "AND p.capdstopro >= venta.caivcanite;";
+        //    sql += ") AS venta(faivcodpro, caivcanite) " +
+        //           "WHERE p.papdcodpro = venta.faivcodpro " +
+        //           "AND p.capdstopro >= venta.caivcanite;";
 
-            this.Conexion.PrepararComando(sql);
+        //    this.Conexion.PrepararComando(sql);
 
-            try
-            {
-                this.Conexion.EjecutarTransaccion();
-                this.Conexion.Desconectar();
-                return true;
-            }
-            catch (Exception)
-            {
-                this.Conexion.Desconectar();
-                return false;
-            }
-        }
+        //    try
+        //    {
+        //        this.Conexion.EjecutarTransaccion();
+        //        this.Conexion.Desconectar();
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        this.Conexion.Desconectar();
+        //        return false;
+        //    }
+        //}
         public bool Modificar()
             { 
                 if (!this.VerificarExistencia())
@@ -561,6 +561,31 @@ namespace CapaRN
                 this.Conexion.Desconectar();
                 return ListaResultado;
             }
+        public bool ActualizarStock(List<aproduc> listaProductos)
+        {
+            this.Conexion.Conectar();
+            string sql = "";
+            foreach (aproduc producto in listaProductos)
+            {
+
+                 sql += "update aproduc set " +
+                                             "capdstopro = @capdstopro" +
+                                            
+                         " where " +
+                                "papdcodpro = @papdcodpro;";
+
+
+            this.Conexion.PrepararComando(sql);
+            this.Conexion.AsignarParametroEntero("@capdstopro",producto.capdstopro);
+            this.Conexion.AsignarParametroCadena("@papdcodpro",producto.papdcodpro);
+             sql = this.Conexion.ObtenerSQL();
+            }
+            
+            this.Conexion.EjecutarTransaccion();
+            this.Conexion.Desconectar();
+
+            return true;
+        }
         public List<String> Combo(String campo)
         {
             List<String> ListaResultado = new List<String>();

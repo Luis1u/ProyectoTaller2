@@ -210,6 +210,7 @@ namespace SistemaDeGestion2026
                 item.caivpreuni = pro.capdpreven;
                 item.caivsubtot = item.caivcanite * item.caivpreuni;
                 item.caivestite = true;
+                item.capdstopro = pro.capdstopro;
                 listaItems.Add(item);
 
             }
@@ -369,6 +370,20 @@ namespace SistemaDeGestion2026
 
         private void BTNGrabar_Click(object sender, EventArgs e)
         {
+            List<aproduc> ListaProductos = new List<aproduc>();
+            ListaProductos = listaItems.Select(x => new aproduc
+            {
+                papdcodpro = x.faivcodpro,
+                capdstopro = x.capdstopro - x.caivcanite,
+                capdcodbar = x.capdcodbar,
+                capdnompro = x.capdnompro,
+                capdtalpro = x.capdtalpro,
+                capddespro = x.capddespro,
+                capdpreven = x.caivpreuni,
+                capdmodpro = x.capdmodpro
+
+            }).ToList();
+            
             if (Verificar_Integridad())
             {
                 venta = new avenpro();
@@ -404,13 +419,20 @@ namespace SistemaDeGestion2026
 
                 }
 
-                if (venta.Grabar() && item.Grabar(listaItems) && producto.DisminuirStock(listaItems))
+                if (venta.Grabar() && item.Grabar(listaItems) && producto.ActualizarStock(ListaProductos))
                 {
                     MessageBox.Show("Venta guardada correctamente!!",
                                     "Mensaje",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
                     //LimpiarCasillas();
+
+                    if (PDGDialogo.ShowDialog() == DialogResult.OK) {
+
+                        PRDRecibo.Print();
+                    }
+
+
                     this.actualizar = true;
                     //this.FormClosing -= FRMVenta_Registrar_FormClosing;                    
                     this.Close();
@@ -447,6 +469,15 @@ namespace SistemaDeGestion2026
             }
 
             return true;
+
+        }
+
+        private void PRDRecibo_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("RECIBO DE VENTA", new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
+            e.Graphics.DrawString("FECHA: "+ venta.cavpfechor.ToString("dd/MM/yyyy HH:mm:ss"), new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new PointF(100, 120));
+
+
 
         }
     }

@@ -77,6 +77,8 @@
             this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
             this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
             this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
+            this.PRDRecibo = new System.Drawing.Printing.PrintDocument();
+            this.PDGDialogo = new System.Windows.Forms.PrintDialog();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).BeginInit();
             this.CMSMenu.SuspendLayout();
@@ -735,6 +737,14 @@
             this.BTNGrabar.Text = "&Grabar";
             this.BTNGrabar.Click += new System.EventHandler(this.BTNGrabar_Click);
             // 
+            // PRDRecibo
+            // 
+            this.PRDRecibo.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PRDRecibo_PrintPage);
+            // 
+            // PDGDialogo
+            // 
+            this.PDGDialogo.UseEXDialog = true;
+            // 
             // FRMVenta_Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -817,5 +827,7 @@
         private DevComponents.DotNetBar.LabelX LBLTotalNumero;
         private DevComponents.DotNetBar.LabelX LBLBolivianos;
         private DevComponents.DotNetBar.ButtonX BTNLimpiarProducto;
+        private System.Drawing.Printing.PrintDocument PRDRecibo;
+        private System.Windows.Forms.PrintDialog PDGDialogo;
     }
 }
