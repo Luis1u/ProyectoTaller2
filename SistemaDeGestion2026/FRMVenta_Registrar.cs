@@ -421,20 +421,42 @@ namespace SistemaDeGestion2026
 
                 if (venta.Grabar() && item.Grabar(listaItems) && producto.ActualizarStock(ListaProductos))
                 {
-                    MessageBox.Show("Venta guardada correctamente!!",
-                                    "Mensaje",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                    //LimpiarCasillas();
+                    MessageBox.Show("Venta guardada correctamente!!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    if (PDGDialogo.ShowDialog() == DialogResult.OK) {
+                    // 1. Preguntamos al usuario si desea guardar en PDF o imprimir en físico
+                    DialogResult opcion = MessageBox.Show("¿Desea guardar el recibo en PDF?\n\n(Haga clic en 'Sí' para elegir dónde guardarlo, o 'No' para imprimir en impresora física)",
+                                                         "Opciones de Recibo",
+                                                         MessageBoxButtons.YesNo,
+                                                         MessageBoxIcon.Question);
 
-                        PRDRecibo.Print();
+                    if (opcion == DialogResult.Yes)
+                    {
+                        // Opción de Guardar en PDF con selector de ruta
+                        SaveFileDialog guardarPDF = new SaveFileDialog();
+                        guardarPDF.Filter = "Archivo PDF (*.pdf)|*.pdf";
+                        guardarPDF.FileName = "Recibo_" + venta.pavpcodven.Replace("/", "-") + ".pdf";
+
+                        if (guardarPDF.ShowDialog() == DialogResult.OK)
+                        {
+                            PRDRecibo.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+                            PRDRecibo.PrinterSettings.PrintToFile = true;
+                            PRDRecibo.PrinterSettings.PrintFileName = guardarPDF.FileName;
+                            PRDRecibo.Print();
+
+                            MessageBox.Show("¡PDF guardado correctamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        // Opción de Impresión Física (abre el selector de impresoras normales)
+                        PDGDialogo.Document = PRDRecibo;
+                        if (PDGDialogo.ShowDialog() == DialogResult.OK)
+                        {
+                            PRDRecibo.Print();
+                        }
                     }
 
-
                     this.actualizar = true;
-                    //this.FormClosing -= FRMVenta_Registrar_FormClosing;                    
                     this.Close();
                 }
                 else
@@ -473,12 +495,88 @@ namespace SistemaDeGestion2026
         }
 
         private void PRDRecibo_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            e.Graphics.DrawString("RECIBO DE VENTA", new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
-            e.Graphics.DrawString("FECHA: "+ venta.cavpfechor.ToString("dd/MM/yyyy HH:mm:ss"), new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new PointF(100, 120));
+        {// Fuentes compactas ideales para tickets térmicos
+            Font fuenteTitulo = new Font("Consolas", 10, FontStyle.Bold);
+            Font fuenteNegrita = new Font("Consolas", 8, FontStyle.Bold);
+            Font fuenteNormal = new Font("Consolas", 8, FontStyle.Regular);
+            Brush pincel = Brushes.Black;
 
+            float margenIzquierdo = 10;
+            float posicionY = 10;
+            float anchoTicket = 270; // Ancho útil para impresora térmica
 
+            // 1. Cabecera del Recibo
+            e.Graphics.DrawString("SISTEMA DE GESTIÓN 2026", fuenteTitulo, pincel, new PointF(margenIzquierdo, posicionY));
+            posicionY += 16;
 
+            e.Graphics.DrawString("RECIBO DE VENTA", fuenteNegrita, pincel, new PointF(margenIzquierdo, posicionY));
+            posicionY += 14;
+
+            e.Graphics.DrawString("Nro: " + venta.pavpcodven.Replace("avenpro-", ""), fuenteNormal, pincel, new PointF(margenIzquierdo, posicionY));
+
+            posicionY += 12;
+
+            e.Graphics.DrawString("FECHA: " + venta.cavpfechor.ToString("dd/MM/yyyy HH:mm"), fuenteNormal, pincel, new PointF(margenIzquierdo, posicionY));
+            posicionY += 12;
+
+            e.Graphics.DrawString("CLIENTE: " + cliente.cacerazsoc, fuenteNormal, pincel, new PointF(margenIzquierdo, posicionY));
+            posicionY += 12;
+
+            e.Graphics.DrawString("NIT/CI: " + cliente.cacenitcli, fuenteNormal, pincel, new PointF(margenIzquierdo, posicionY));
+            posicionY += 15;
+
+            // Línea divisoria
+            e.Graphics.DrawLine(Pens.Black, margenIzquierdo, posicionY, margenIzquierdo + anchoTicket, posicionY);
+            posicionY += 8;
+
+            // 2. Cabecera de la Tabla de Productos
+            e.Graphics.DrawString("CANT", fuenteNegrita, pincel, new PointF(margenIzquierdo, posicionY));
+            e.Graphics.DrawString("PRODUCTO", fuenteNegrita, pincel, new PointF(margenIzquierdo + 35, posicionY));
+            e.Graphics.DrawString("P.U.", fuenteNegrita, pincel, new PointF(margenIzquierdo + 175, posicionY));
+            e.Graphics.DrawString("SUB", fuenteNegrita, pincel, new PointF(margenIzquierdo + 220, posicionY));
+            posicionY += 14;
+
+            e.Graphics.DrawLine(Pens.Gray, margenIzquierdo, posicionY, margenIzquierdo + anchoTicket, posicionY);
+            posicionY += 6;
+
+            // 3. Detalle de los Productos
+            foreach (liteven item in listaItems)
+            {
+                string cantidad = item.caivcanite.ToString();
+                string descripcion = item.capdnompro;
+                string pUnitario = item.caivpreuni.ToString("F2");
+                string subtotal = item.caivsubtot.ToString("F2");
+
+                // Recortar texto largo para que no se desborde en el ticket angosto
+                if (descripcion.Length > 22)
+                {
+                    descripcion = descripcion.Substring(0, 20) + "..";
+                }
+
+                e.Graphics.DrawString(cantidad, fuenteNormal, pincel, new PointF(margenIzquierdo, posicionY));
+                e.Graphics.DrawString(descripcion, fuenteNormal, pincel, new PointF(margenIzquierdo + 35, posicionY));
+                e.Graphics.DrawString(pUnitario, fuenteNormal, pincel, new PointF(margenIzquierdo + 175, posicionY));
+                e.Graphics.DrawString(subtotal, fuenteNormal, pincel, new PointF(margenIzquierdo + 220, posicionY));
+
+                posicionY += 14;
+            }
+
+            e.Graphics.DrawLine(Pens.Black, margenIzquierdo, posicionY, margenIzquierdo + anchoTicket, posicionY);
+            posicionY += 10;
+
+            // 4. Totales
+            e.Graphics.DrawString("TOTAL A PAGAR:", fuenteNegrita, pincel, new PointF(margenIzquierdo + 75, posicionY));
+            e.Graphics.DrawString(total.ToString("F2"), fuenteNegrita, pincel, new PointF(margenIzquierdo + 210, posicionY));
+            posicionY += 16;
+
+            string numeroEnLetras = MetodosGenerales.ConvertirNumeroALetras(total);
+            e.Graphics.DrawString("SON: " + numeroEnLetras + " BOLIVIANOS", fuenteNormal, pincel, new PointF(margenIzquierdo, posicionY));
+            posicionY += 22;
+
+            // 5. Pie de Página
+            Font fuentePie = new Font("Consolas", 7, FontStyle.Italic);
+            e.Graphics.DrawString("¡Gracias por su compra!", fuentePie, pincel, new PointF(margenIzquierdo + 55, posicionY));
+        
         }
     }
 }
