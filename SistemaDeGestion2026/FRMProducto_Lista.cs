@@ -225,7 +225,7 @@ namespace SistemaDeGestion2026
 
             reporte.descripcion = "Listado de Productos Registradas en el Sistema de Gestión 2026";
 
-            reporte.GenerarReporte(11, new float[] { 8, 10, 15, 10, 8, 8, 7, 6, 7, 6, 15 }, new List<string> { "Codigo","Cod Barras","Producto", "Categoria", "Marca", "Modelo", "Color", "Talla", "Genero", "Stock","Precio de Venta" }, lista_productos);
+            reporte.GenerarReporte(11, new float[] { 16, 10, 15, 10, 8, 8, 7, 6, 7, 6, 7 }, new List<string> { "Codigo","Cod Barras","Producto", "Categoria", "Marca", "Modelo", "Color", "Talla", "Genero", "Stock","Precio de Venta" }, lista_productos);
         }
     }
 }

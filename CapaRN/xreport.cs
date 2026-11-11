@@ -471,63 +471,74 @@ namespace CapaRN
                 {
                     // 0. Código (papdcodpro)
                     Celda = new Cell(new Paragraph(new Chunk(P.papdcodpro?.ToString() ?? "", Fondo3)));
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 1. Cod Barras (capdcodbar)
                     Celda = new Cell(new Paragraph(new Chunk(P.capdcodbar?.ToString() ?? "", Fondo3)));
                     Celda.HorizontalAlignment = Element.ALIGN_CENTER;
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 2. Producto (capdnompro)
                     Celda = new Cell(new Paragraph(new Chunk(P.capdnompro?.ToString() ?? "", Fondo3)));
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 3. Categoria (cacpnomcat)
                     Celda = new Cell(new Paragraph(new Chunk(P.cacpnomcat?.ToString() ?? "", Fondo3)));
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 4. Marca (capdmarpro)
                     Celda = new Cell(new Paragraph(new Chunk(P.capdmarpro?.ToString() ?? "", Fondo3)));
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 5. Modelo (capdmodpro)
                     Celda = new Cell(new Paragraph(new Chunk(P.capdmodpro?.ToString() ?? "", Fondo3)));
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 6. Color (capdcolpro)
                     Celda = new Cell(new Paragraph(new Chunk(P.capdcolpro?.ToString() ?? "", Fondo3)));
                     Celda.HorizontalAlignment = Element.ALIGN_CENTER;
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 7. Talla (capdtalpro)
                     Celda = new Cell(new Paragraph(new Chunk(P.capdtalpro?.ToString() ?? "", Fondo3)));
                     Celda.HorizontalAlignment = Element.ALIGN_CENTER;
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 8. Genero (capdgenpro)
                     Celda = new Cell(new Paragraph(new Chunk(P.capdgenpro?.ToString() ?? "", Fondo3)));
                     Celda.HorizontalAlignment = Element.ALIGN_CENTER;
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 9. Stock (capdstopro) - Numérico alineado a la derecha
                     Celda = new Cell(new Paragraph(new Chunk(P.capdstopro.ToString(), Fondo3)));
                     Celda.HorizontalAlignment = Element.ALIGN_RIGHT;
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 10. Precio de Venta (capdpreven) - Numérico con formato y alineado a la derecha
                     Celda = new Cell(new Paragraph(new Chunk(Convert.ToDecimal(P.capdpreven).ToString("N2"), Fondo3)));
                     Celda.HorizontalAlignment = Element.ALIGN_RIGHT;
-                    if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    if (!P.capdestpro) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightSalmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     j++;
@@ -721,7 +732,14 @@ namespace CapaRN
                 {
                     // 0. Código de Cliente (pacecodcli)
                     Celda = new Cell(new Paragraph(new Chunk(P.pacecodcli?.ToString() ?? "", Fondo3)));
-                    if (j % 2 == 0 && P.caceestcli) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.PaleGoldenrod); }
+                    if (!P.caceestcli)
+                    {
+                        Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.Salmon);
+                    }
+                    else if (j % 2 == 0)
+                    {
+                        Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue);
+                    }
                     Tabla.AddCell(Celda);
 
                     // 1. Estado / Habilitado o Inhabilitado (caceestcli - es bool)
@@ -733,7 +751,7 @@ namespace CapaRN
                     }
                     else if (j % 2 == 0)
                     {
-                        Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.PaleGoldenrod);
+                        Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue);
                     }
                     Celda.HorizontalAlignment = Element.ALIGN_CENTER;
                     Tabla.AddCell(Celda);
@@ -742,27 +760,41 @@ namespace CapaRN
                     Celda = new Cell(new Paragraph(new Chunk(P.capsnumcid?.ToString() ?? "", Fondo3)));
                     Celda.HorizontalAlignment = Element.ALIGN_CENTER;
                     if (!P.caceestcli) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.Salmon); }
-                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.PaleGoldenrod); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
-                    // 3. Nombre Completo (Apellidos y Nombres concatenados)
-                    string nombreCompleto = $"{P.capsapepat} {P.capsapemat} {P.capsnomper}";
-                    Celda = new Cell(new Paragraph(new Chunk(nombreCompleto, Fondo3)));
+                    // 3. Nombre
+
+
+                    Celda = new Cell(new Paragraph(new Chunk(P.capsnomper, Fondo3)));
                     if (!P.caceestcli) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.Salmon); }
-                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.PaleGoldenrod); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    Tabla.AddCell(Celda);
+
+                    //ape paterno
+
+                    Celda = new Cell(new Paragraph(new Chunk(P.capsapepat, Fondo3)));
+                    if (!P.caceestcli) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.Salmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
+                    Tabla.AddCell(Celda);
+
+                    //ape materno
+                    Celda = new Cell(new Paragraph(new Chunk(P.capsapemat, Fondo3)));
+                    if (!P.caceestcli) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.Salmon); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 4. Razón Social (cacerazsoc)
                     Celda = new Cell(new Paragraph(new Chunk(P.cacerazsoc?.ToString() ?? "", Fondo3)));
                     if (!P.caceestcli) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.Salmon); }
-                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.PaleGoldenrod); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     // 5. NIT / Documento Tributario (cacenitcli)
                     Celda = new Cell(new Paragraph(new Chunk(P.cacenitcli?.ToString() ?? "", Fondo3)));
                     Celda.HorizontalAlignment = Element.ALIGN_CENTER;
                     if (!P.caceestcli) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.Salmon); }
-                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.PaleGoldenrod); }
+                    else if (j % 2 == 0) { Celda.BackgroundColor = new iTextSharp.text.Color(System.Drawing.Color.LightBlue); }
                     Tabla.AddCell(Celda);
 
                     j++;

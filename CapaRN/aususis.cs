@@ -86,8 +86,8 @@ namespace CapaRN
             } 
 		    public string causpasswo
             { 
-                get{ return this._causpasswo;}
-                set{ this._causpasswo = value;}
+                get{ return CLConexionPGSQL.Desencriptar(this._causpasswo);}
+                set{ this._causpasswo = CLConexionPGSQL.Encriptar(value);}
             } 
 		    public string causcodhu1
             { 

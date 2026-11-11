@@ -196,7 +196,7 @@ namespace SistemaDeGestion2026
 
             reporte.descripcion = "Listado de Clientes Registradas en el Sistema de Gestión 2026";
 
-            reporte.GenerarReporte(6, new float[] { 12, 15, 15, 30, 18, 10 }, new List<string> { "Código", "Estado", "Nro CID", "Cliente (Apellidos y Nombres)", "Razón Social", "NIT" }, lista_clientes);
+            reporte.GenerarReporte(8, new float[] { 13, 13, 13, 13, 13, 13, 11, 11 }, new List<string> { "Código", "Estado", "Nro CI", "Nombre","Apellido Paterno","Apellido Materno", "Razón Social", "NIT" }, lista_clientes);
         }
     }
 }
